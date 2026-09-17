@@ -1,0 +1,44 @@
+.heroWrapper {
+  margin: 30px;
+  padding: 0 30px 30px 30px;
+  height: calc(100dvh - 60px);
+  border-radius: 12px;
+  background-color: rgb(56, 86, 83);
+  background-image:
+    radial-gradient(at 85% 10%, rgb(194, 100, 97) 0px, transparent 50%),
+    radial-gradient(at 52% 15%, rgb(193, 215, 213) 0px, transparent 50%),
+    radial-gradient(at 60% 69%, rgb(252, 166, 100) 0px, transparent 50%),
+    radial-gradient(at 12% 2%, rgb(133, 203, 128) 0px, transparent 50%),
+    radial-gradient(at 25% 70%, rgb(213, 63, 68) 0px, transparent 50%),
+    radial-gradient(at 84% 64%, rgb(127, 173, 199) 0px, transparent 50%);
+}
+
+.navWrapper {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroTextWrapper {
+  height: calc(100% - 100px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+  color: var(--color-gray-800);
+}
+
+.primeryHeroHeading {
+  font-size: 6.25rem;
+  line-height: 1;
+}
+
+.secondaryHeroHeading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2rem;
+  line-height: 1.3;
+}
