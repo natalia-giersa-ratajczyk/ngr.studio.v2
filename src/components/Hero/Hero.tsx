@@ -1,3 +1,8 @@
+"use client";
+
+import { Sparkles } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
+
 import { Logo } from "../Logo";
 import styles from "./Hero.module.css";
 
@@ -13,6 +18,11 @@ export const Hero = () => {
           <span>Zapraszam Cię do mojego świata.</span>
           <span>Mam nadzieję, że zostaniesz na dłużej.</span>
         </h2>
+      </div>
+      <div className={styles.canvasContainer}>
+        <Canvas>
+          <Sparkles count={500} speed={0.1} size={1.5} scale={10} noise={10} />
+        </Canvas>
       </div>
     </section>
   );
