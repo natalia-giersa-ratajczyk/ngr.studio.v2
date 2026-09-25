@@ -1,0 +1,12 @@
+.technologySectionWrapper {
+  max-width: 775px;
+  margin-inline: auto;
+  border-image: url("@/images/border-backgroung.jpg") 100% 24px;
+}
+
+.contentWrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
