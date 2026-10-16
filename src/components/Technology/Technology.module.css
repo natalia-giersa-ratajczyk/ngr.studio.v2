@@ -1,12 +1,47 @@
 .technologySectionWrapper {
-  max-width: 775px;
-  margin-inline: auto;
-  border-image: url("@/images/border-backgroung.jpg") 100% 24px;
+  position: relative;
+  margin: 288px auto;
+  padding: 16px;
+  max-width: 750px;
+  z-index: 1;
+  color: var(--color-gray-800);
 }
 
 .contentWrapper {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 12px;
+  padding: 44px 16px;
+  background-color: var(--color-background-light);
+  border-radius: 200px;
+}
+
+.contentWrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin-inline: auto;
+  height: 100%;
+  width: inherit;
+  background: url("/images/border-background.jpg");
+  background-size: cover;
+  filter: opacity(0.8);
+  border-radius: 216px;
+  z-index: -1;
+}
+
+.technologySectionHeader {
+  padding-bottom: 16px;
+  font-size: 5.875rem;
+  white-space: nowrap;
+  color: var(--color-gray-900);
+}
+
+.technologiesWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px 12px;
   flex-wrap: wrap;
+  padding-inline: 44px;
 }
