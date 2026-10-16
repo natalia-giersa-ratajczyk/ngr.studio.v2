@@ -1,4 +1,5 @@
 import { About } from "@/components/About";
+import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
 import { Technology } from "@/components/Technology";
 
@@ -11,6 +12,7 @@ export default function Home() {
       <div className={styles.content}>
         <About />
         <Technology />
+        <Footer />
       </div>
     </div>
   );
