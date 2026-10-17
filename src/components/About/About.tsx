@@ -39,8 +39,8 @@ export const About = () => {
               formie, skontaktuj się ze mną.
             </span>
           </p>
+          <span className={styles.email}>kontakt@ngr.studio</span>
         </div>
-        <span className={styles.email}>kontakt@ngr.studio</span>
       </section>
     </>
   );

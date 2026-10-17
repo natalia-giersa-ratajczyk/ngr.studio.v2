@@ -1,0 +1,50 @@
+.footerWrapper {
+  position: relative;
+  padding: 84px 60px;
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-nebula-900);
+  border-radius: 0 0 12px 12px;
+}
+
+@media (max-width: 992px) {
+  .footerWrapper {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 4rem;
+  }
+}
+
+.footerWrapper > svg {
+  --top: -4.5rem;
+
+  position: absolute;
+  top: var(--top);
+  left: 0;
+}
+
+@media (max-width: 820px) {
+  .footerWrapper > svg {
+    --top: -3.5rem;
+  }
+}
+
+@media (max-width: 620px) {
+  .footerWrapper > svg {
+    --top: -2rem;
+  }
+}
+
+.footerWrapper > svg:nth-of-type(2):not(:only-child) {
+  --top: -2.5rem;
+
+  left: 1396px;
+  transform: rotate(180deg);
+}
+
+.footerTextWrapper,
+.footerLink {
+  color: var(--color-nebula-100);
+}

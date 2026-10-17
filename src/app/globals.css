@@ -23,14 +23,13 @@
 :root {
   --heading-font: "Fraunces", serif;
 
+  --color-nebula-100: #f6f9f9;
   --color-nebula-700: #5b8e8a;
   --color-nebula-800: #395956;
   --color-nebula-900: #172422;
   --color-contessa-600: #a74641;
   --color-contessa-700: #7a332f;
   --color-contessa-800: #4c201e;
-  --color-orange-700: #c85c04;
-  --color-blue-100: #edf3f7;
   --color-gray-800: #353535;
   --color-gray-900: #151515;
   --color-background-light: #f0eee9;

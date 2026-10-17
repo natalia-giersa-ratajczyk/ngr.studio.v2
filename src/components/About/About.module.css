@@ -15,7 +15,7 @@
   width: 100%;
   height: auto;
   border-radius: 12px;
-  filter: grayscale(0.6);
+  /* filter: grayscale(0.4); */
 }
 
 .textWrapper {
@@ -62,7 +62,7 @@
 }
 
 .email {
-  justify-self: end;
+  /* justify-self: end; */
   font-family: var(--heading-font);
   font-size: 1.6rem;
   color: var(--color-contessa-600);

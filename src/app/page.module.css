@@ -2,4 +2,5 @@
   margin: 30px;
   border-radius: 12px;
   background-color: var(--color-background-light);
+  overflow: hidden;
 }
