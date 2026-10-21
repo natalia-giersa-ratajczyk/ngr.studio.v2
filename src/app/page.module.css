@@ -4,3 +4,9 @@
   background-color: var(--color-background-light);
   overflow: hidden;
 }
+
+@media (max-width: 620px) {
+  .content {
+    margin: 20px;
+  }
+}

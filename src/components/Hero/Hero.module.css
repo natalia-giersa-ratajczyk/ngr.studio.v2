@@ -13,10 +13,6 @@
     radial-gradient(at 12% 2%, oklch(68.178% 0.10883 142.498) 0px, transparent 50%),
     radial-gradient(at 25% 70%, oklch(58.849% 0.18655 23.265) 0px, transparent 50%),
     radial-gradient(at 84% 64%, oklch(72.402% 0.0621 233.565) 0px, transparent 50%);
-  /* 
-  @media (max-width: 992px) {
-    height: 100dvh;
-  } */
 }
 
 .canvasContainer {
@@ -45,10 +41,6 @@
 .primeryHeroHeading {
   font-size: 6.25rem;
   line-height: 1;
-
-  @media (max-width: 992px) {
-    font-size: 4.25rem;
-  }
 }
 
 .secondaryHeroHeading {
@@ -57,10 +49,22 @@
   align-items: center;
   font-size: 2rem;
   line-height: 1.3;
+}
 
-  @media (max-width: 992px) {
+@media (max-width: 992px) {
+  .primeryHeroHeading {
+    font-size: 4.25rem;
+  }
+
+  .secondaryHeroHeading {
     font-size: 1.5rem;
     line-height: 1.5;
     text-align: center;
+  }
+}
+
+@media (max-width: 620px) {
+  .heroWrapper {
+    margin: 20px;
   }
 }

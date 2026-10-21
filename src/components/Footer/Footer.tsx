@@ -2,8 +2,6 @@
 
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 
-import { GitHubIcon } from "../GitHubIcon";
-import { LinkedInIcon } from "../LinkedInIcon";
 import { Logo } from "../Logo";
 import { WaveIcon } from "../WaveIcon";
 import styles from "./Footer.module.css";
@@ -21,11 +19,10 @@ export const Footer = () => {
       {isDesktop && <WaveIcon />}
       <Logo colorVariant="light" />
       <div className={styles.footerTextWrapper}>
-        <p>
-          <span>kontakt:</span>
-          <span>kontakt@ngr.studio</span>
-        </p>
-        <p>
+        <a href="mailto:kontakt@ngr.studio" className={styles.contactWrapper}>
+          kontakt@ngr.studio
+        </a>
+        <p className={styles.allRightsReserved}>
           wszelkie prawa zastrzeżone <span>{currentYear}</span> | ngr.studio
         </p>
       </div>
@@ -36,7 +33,7 @@ export const Footer = () => {
           aria-label="Mój profil na GitHub'ie"
           className={styles.footerLink}
         >
-          <GitHubIcon />
+          github
         </a>
         <a
           href="https://www.linkedin.com/in/natalia-giersa-ratajczyk-81719a21b/"
@@ -44,7 +41,7 @@ export const Footer = () => {
           aria-label="Mój profil na LinkedIn'ie"
           className={styles.footerLink}
         >
-          <LinkedInIcon />
+          linkedin
         </a>
       </nav>
     </footer>

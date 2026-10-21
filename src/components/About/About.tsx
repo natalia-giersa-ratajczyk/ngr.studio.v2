@@ -8,7 +8,7 @@ export const About = () => {
       <section className={styles.aboutSectionWrapper}>
         <div className={styles.imageWrapper}>
           <Image
-            src={"/images/my-photo.JPG"}
+            src={"/images/my-photo.webp"}
             alt="A photo of the author."
             height={720}
             width={540}
@@ -39,7 +39,9 @@ export const About = () => {
               formie, skontaktuj się ze mną.
             </span>
           </p>
-          <span className={styles.email}>kontakt@ngr.studio</span>
+          <a href="mailto:kontakt@ngr.studio" className={styles.email}>
+            kontakt@ngr.studio
+          </a>
         </div>
       </section>
     </>

@@ -11,7 +11,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 44px 16px;
+  gap: 12px;
+  padding: 60px 32px;
   background-color: var(--color-background-light);
   border-radius: 200px;
 }
@@ -23,7 +24,7 @@
   margin-inline: auto;
   height: 100%;
   width: inherit;
-  background: url("/images/border-background.jpg");
+  background: url("/images/border-background.webp");
   background-size: cover;
   filter: opacity(0.8);
   border-radius: 216px;
@@ -34,6 +35,8 @@
   padding-bottom: 16px;
   font-size: 5.875rem;
   white-space: nowrap;
+  line-height: 1;
+  text-align: center;
   color: var(--color-gray-900);
 }
 
@@ -44,4 +47,43 @@
   gap: 6px 12px;
   flex-wrap: wrap;
   padding-inline: 44px;
+  text-align: center;
+}
+
+.technologiesMobileWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+@media (max-width: 992px) {
+  .technologySectionHeader {
+    font-size: 3.875rem;
+  }
+
+  .technologySectionWrapper {
+    margin: 232px 20px;
+  }
+}
+
+@media (max-width: 840px) {
+  .technologySectionHeader {
+    white-space: wrap;
+  }
+}
+
+@media (max-width: 620px) {
+  .contentLeading {
+    font-size: 0.875rem;
+  }
+
+  .technologySectionHeader {
+    font-size: 3rem;
+  }
+
+  .technologySectionWrapper {
+    margin: 188px 20px;
+  }
 }

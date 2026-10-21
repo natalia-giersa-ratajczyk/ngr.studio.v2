@@ -20,8 +20,8 @@ export const Hero = () => {
         </h2>
       </div>
       <div className={styles.canvasContainer}>
-        <Canvas>
-          <Sparkles count={500} speed={0.1} size={1.5} scale={12} noise={1} />
+        <Canvas dpr={[1, 2]}>
+          <Sparkles count={500} speed={0.1} size={1.5} scale={12} noise={1} raycast={() => null} />
         </Canvas>
       </div>
     </section>
