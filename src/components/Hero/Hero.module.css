@@ -42,6 +42,10 @@
   line-height: 1;
 }
 
+.letter {
+  display: inline-block;
+}
+
 .secondaryHeroHeading {
   display: flex;
   flex-direction: column;

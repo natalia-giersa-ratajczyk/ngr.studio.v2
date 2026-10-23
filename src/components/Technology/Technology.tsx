@@ -24,8 +24,6 @@ export const Technology = () => {
               <span>CSS</span>
               <span>Three.js</span>
               <span>R3F</span>
-              <span>Blender</span>
-              <span>GSAP</span>
               <span>Motion</span>
             </div>
             <StarIcon />
@@ -44,10 +42,6 @@ export const Technology = () => {
             <span>Three.js</span>
             <StarIcon />
             <span>R3F</span>
-            <StarIcon />
-            <span>Blender</span>
-            <StarIcon />
-            <span>GSAP</span>
             <StarIcon />
             <span>Motion</span>
             <StarIcon />
