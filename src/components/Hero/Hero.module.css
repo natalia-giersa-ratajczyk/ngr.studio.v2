@@ -5,14 +5,13 @@
   height: calc(100dvh - 60px);
   border-radius: 12px;
   background-color: rgb(56, 86, 83);
-  background-blend-mode: hard-light;
   background-image:
-    radial-gradient(at 85% 10%, oklch(61.28% 0.12084 23.094) 0px, transparent 50%),
-    radial-gradient(at 52% 15%, oklch(86.219% 0.02376 190.331) 0px, transparent 50%),
-    radial-gradient(at 60% 69%, oklch(79.724% 0.13075 56.945) 0px, transparent 50%),
-    radial-gradient(at 12% 2%, oklch(68.178% 0.10883 142.498) 0px, transparent 50%),
-    radial-gradient(at 25% 70%, oklch(58.849% 0.18655 23.265) 0px, transparent 50%),
-    radial-gradient(at 84% 64%, oklch(72.402% 0.0621 233.565) 0px, transparent 50%);
+    radial-gradient(at 85% 10%, #d53f44 0px, transparent 45%),
+    radial-gradient(at 52% 35%, #5b8e8a 0px, transparent 60%),
+    radial-gradient(at 65% 89%, #528eb3 0px, transparent 50%),
+    radial-gradient(at 12% 2%, #70aa6b 0px, transparent 50%),
+    radial-gradient(at 25% 70%, #a74641 0px, transparent 70%),
+    radial-gradient(at 84% 52%, #c85c04 0px, transparent 60%);
 }
 
 .canvasContainer {
@@ -35,7 +34,7 @@
   align-items: center;
   justify-content: center;
   gap: 36px;
-  color: var(--color-gray-800);
+  color: var(--color-gray-850);
 }
 
 .primeryHeroHeading {

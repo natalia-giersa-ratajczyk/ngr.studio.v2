@@ -21,7 +21,7 @@ export const Hero = () => {
       </div>
       <div className={styles.canvasContainer}>
         <Canvas dpr={[1, 2]}>
-          <Sparkles count={500} speed={0.1} size={1.5} scale={12} noise={1} raycast={() => null} />
+          <Sparkles count={500} speed={0.1} size={1.75} scale={12} noise={3} raycast={() => null} />
         </Canvas>
       </div>
     </section>
