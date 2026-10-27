@@ -10,12 +10,21 @@
 
 .imageWrapper {
   max-width: 540px;
+
+  /* animation: object-in-view both;
+  animation-timeline: view();
+  animation-range: entry 0% entry 40%; */
 }
 
-.imageWrapper > img {
+.image {
   width: 100%;
   height: auto;
   border-radius: 12px;
+
+  /* animation: fade-in 1s forwards paused;
+  @container style(--in-view: true) {
+    animation-play-state: running;
+  } */
 }
 
 .textWrapper {
@@ -107,3 +116,21 @@
     gap: 56px;
   }
 }
+
+/* @keyframes object-in-view {
+  100% {
+    --in-view: true;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    translate: 0 50px;
+  }
+
+  100% {
+    opacity: 1;
+    translate: 0;
+  }
+} */

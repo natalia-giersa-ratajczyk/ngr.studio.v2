@@ -2,6 +2,7 @@
 
 import { Sparkles } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
+import { useState } from "react";
 
 import { Logo } from "../Logo";
 import styles from "./Hero.module.css";
@@ -11,6 +12,10 @@ const segmenter = new Intl.Segmenter();
 const splitLetters = [...segmenter.segment(text)];
 
 export const Hero = () => {
+  const [sparklesHaveLoaded, setSparklesHaveLoaded] = useState(false);
+
+  const onSparklesLoaded = () => setSparklesHaveLoaded(true);
+
   return (
     <section className={styles.heroWrapper}>
       <nav className={`${styles.navWrapper} slideDownAnimation`}>
@@ -30,7 +35,11 @@ export const Hero = () => {
         </h2>
       </div>
       <div className={styles.canvasContainer}>
-        <Canvas dpr={[1, 2]}>
+        <Canvas
+          dpr={[1, 2]}
+          onCreated={onSparklesLoaded}
+          className={`${sparklesHaveLoaded ? "fadeInAnimation" : ""}`}
+        >
           <Sparkles
             count={500}
             speed={0.15}
