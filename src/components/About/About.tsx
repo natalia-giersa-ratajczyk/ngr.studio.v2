@@ -8,7 +8,7 @@ export const About = () => {
       <div className={styles.imageWrapper}>
         <Image
           src={"/images/my-photo.webp"}
-          alt="A photo of the author."
+          alt="Zdjęcie autorki."
           loading="lazy"
           className={styles.image}
           height={720}
@@ -28,7 +28,7 @@ export const About = () => {
           <p>
             <span>
               W swojej pracy lubię łączyć funkcjonalność z estetycznym wyglądem i organicznym
-              ruchem. Wraz z mężem tworzymy mały software house -{" "}
+              ruchem. Wraz z mężem tworzymy mały creative house -{" "}
               <a href="https://vnmd.studio" target="_blank" className={styles.vnmdLink}>
                 vnmd
               </a>

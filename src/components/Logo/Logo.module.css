@@ -1,12 +1,12 @@
 .logo {
-  --size: 2rem;
+  --color: var(--color-nebula-900);
 
-  color: var(--color-nebula-900);
+  color: var(--color);
   font-family: var(--heading-font);
-  font-size: var(--size);
+  font-size: 2rem;
   user-select: none;
 }
 
 .lightVariant {
-  color: var(--color-nebula-100);
+  --color: var(--color-nebula-100);
 }

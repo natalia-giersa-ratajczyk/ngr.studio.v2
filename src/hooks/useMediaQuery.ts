@@ -5,12 +5,15 @@ export const useMediaQuery = (query: string) => {
 
   useEffect(() => {
     const media = window.matchMedia(query);
+    const controller = new AbortController();
 
     const onChange = () => setMatches(media.matches);
     onChange();
-    media.addEventListener("change", onChange);
+    media.addEventListener("change", onChange, {
+      signal: controller.signal,
+    });
 
-    return () => media.removeEventListener("change", onChange);
+    return () => controller.abort();
   }, [query]);
 
   return matches;

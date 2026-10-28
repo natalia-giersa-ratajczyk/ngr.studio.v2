@@ -1,5 +1,4 @@
 .footerWrapper {
-  position: relative;
   padding: 84px 60px;
   display: grid;
   grid-template-columns: repeat(3, max-content);
@@ -7,13 +6,19 @@
   align-items: center;
   background-color: var(--color-nebula-900);
   border-radius: 0 0 12px 12px;
+  animation: inView both;
+  animation-timeline: view();
+  animation-range: entry 40%;
 }
 
-.footerWrapper > svg:nth-of-type(2):not(:only-child) {
-  --top: -2.5rem;
-
-  left: 1396px;
-  transform: rotate(180deg);
+@media (prefers-reduced-motion: no-preference) {
+  .footerWrapper > * {
+    animation: slideToLeft 0.6s var(--spring-snappy-easing) both paused;
+    @container style(--in-view: true) {
+      animation-play-state: running;
+    }
+    animation-delay: calc((sibling-index() - 1) * 0.2s);
+  }
 }
 
 .footerTextWrapper,
@@ -49,14 +54,18 @@
   text-decoration: none;
 }
 
-.contactWrapper,
-.footerLink {
-  transition: color 0.2s;
+@media (prefers-reduced-motion: no-preference) {
+  .contactWrapper,
+  .footerLink {
+    transition: color 0.2s;
+  }
 }
 
-.contactWrapper:hover,
-.footerLink:hover {
-  color: var(--color-contessa-500);
+@media (hover: hover) {
+  .contactWrapper:hover,
+  .footerLink:hover {
+    color: var(--color-contessa-500);
+  }
 }
 
 .contactWrapper:focus-visible,
@@ -74,20 +83,6 @@
   }
 }
 
-.footerWrapper > svg {
-  --top: -4.5rem;
-
-  position: absolute;
-  top: var(--top);
-  left: 0;
-}
-
-@media (max-width: 820px) {
-  .footerWrapper > svg {
-    --top: -3.5rem;
-  }
-}
-
 @media (max-width: 620px) {
   .footerWrapper {
     padding: 84px 20px;
@@ -99,5 +94,23 @@
 
   .allRightsReserved {
     font-size: 0.75rem;
+  }
+}
+
+@keyframes inView {
+  100% {
+    --in-view: true;
+  }
+}
+
+@keyframes slideToLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(2rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
 }

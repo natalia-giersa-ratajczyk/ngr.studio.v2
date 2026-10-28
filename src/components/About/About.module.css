@@ -19,9 +19,11 @@
   width: 100%;
   height: auto;
   border-radius: 12px;
-  animation: fadeIn 0.6s var(--power-out-animation) both paused;
-  @container style(--image-in-view: true) {
-    animation-play-state: running;
+  @media (prefers-reduced-motion: no-preference) {
+    animation: fadeIn 0.6s var(--power-out-easing) both paused;
+    @container style(--image-in-view: true) {
+      animation-play-state: running;
+    }
   }
 }
 
@@ -41,17 +43,19 @@
   font-size: 6.75rem;
   line-height: 1;
   color: var(--color-contessa-700);
-  animation: slideDown 1s var(--spring-bouncy-animation) both paused;
-  @container style(--title-in-view: true) {
-    animation-play-state: running;
+  @media (prefers-reduced-motion: no-preference) {
+    animation: slideDown 1s var(--spring-bouncy-easing) both paused;
+    @container style(--title-in-view: true) {
+      animation-play-state: running;
+    }
   }
 }
 
 .aboutText {
-  max-width: 600px;
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
+  max-width: 600px;
   font-size: 1rem;
   color: var(--color-gray-900);
 }
@@ -64,27 +68,32 @@
 
 .aboutText > p > span {
   display: block;
-  animation: slideInX 0.6s var(--power-out-animation) both paused;
-  @container style(--text-in-view: true) {
-    animation-play-state: running;
+  @media (prefers-reduced-motion: no-preference) {
+    animation: slideToLeft 0.6s var(--power-out-easing) both paused;
+    @container style(--text-in-view: true) {
+      animation-play-state: running;
+    }
   }
 }
 
-.creativeDevText {
+.creativeDevText,
+.vnmdLink {
   font-family: var(--heading-font);
   font-size: 1.125rem;
 }
 
 .vnmdLink {
-  font-family: var(--heading-font);
-  font-size: 1.125rem;
   color: var(--color-gray-900);
   text-decoration: var(--color-nebula-600) wavy underline;
-  transition: color 0.2s;
+  @media (prefers-reduced-motion: no-preference) {
+    transition: color 0.2s;
+  }
 }
 
-.vnmdLink:hover {
-  color: var(--color-contessa-600);
+@media (hover: hover) {
+  .vnmdLink:hover {
+    color: var(--color-contessa-600);
+  }
 }
 
 .textWrapper p:has(.email) {
@@ -99,15 +108,19 @@
   font-size: 1.6rem;
   color: var(--color-contessa-600);
   text-decoration: none;
-  transition: color 0.2s;
-  animation: slideDown 1s var(--spring-bouncy-animation) both paused;
-  @container style(--email-in-view: true) {
-    animation-play-state: running;
+  @media (prefers-reduced-motion: no-preference) {
+    transition: color 0.2s;
+    animation: slideDown 1s var(--spring-bouncy-easing) both paused;
+    @container style(--email-in-view: true) {
+      animation-play-state: running;
+    }
   }
 }
 
-.email:hover {
-  color: var(--color-contessa-500);
+@media (hover: hover) {
+  .email:hover {
+    color: var(--color-contessa-500);
+  }
 }
 
 .vnmdLink:focus-visible,
@@ -184,7 +197,7 @@
   }
 }
 
-@keyframes slideInX {
+@keyframes slideToLeft {
   0% {
     opacity: 0;
     translate: 2rem 0;
@@ -199,11 +212,11 @@
 @keyframes slideDown {
   0% {
     opacity: 0;
-    transform: translateY(-2rem);
+    translate: 0 -2rem;
   }
 
   100% {
     opacity: 1;
-    transform: translateY(0);
+    translate: 0;
   }
 }

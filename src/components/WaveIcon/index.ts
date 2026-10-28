@@ -1,1 +1,0 @@
-export { WaveIcon } from "./WaveIcon";

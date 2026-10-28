@@ -1,9 +1,9 @@
 .technologySectionWrapper {
   position: relative;
+  z-index: 1;
   margin: 288px auto;
   padding: 16px;
   max-width: 750px;
-  z-index: 1;
   color: var(--color-gray-800);
 }
 
@@ -15,7 +15,6 @@
   padding: 60px 32px;
   background-color: var(--color-background-light);
   border-radius: 200px;
-
   animation: inView both;
   animation-timeline: view();
   animation-range: entry 40%;
@@ -24,6 +23,7 @@
 .contentWrapper::before {
   content: "";
   position: absolute;
+  z-index: -1;
   inset: 0;
   margin-inline: auto;
   height: 100%;
@@ -32,19 +32,22 @@
   background-size: cover;
   filter: opacity(0.8);
   border-radius: 216px;
-  z-index: -1;
-  animation: fadeIn 0.8s both paused;
-  @container style(--in-view: true) {
-    animation-play-state: running;
+  @media (prefers-reduced-motion: no-preference) {
+    animation: fadeIn 0.8s both paused;
+    @container style(--in-view: true) {
+      animation-play-state: running;
+    }
   }
 }
 
-.contentWrapper > * {
-  animation: slideUp 0.8s var(--spring-snappy-animation) both paused;
-  @container style(--in-view: true) {
-    animation-play-state: running;
+@media (prefers-reduced-motion: no-preference) {
+  .contentWrapper > * {
+    animation: slideUp 0.8s var(--spring-snappy-easing) both paused;
+    @container style(--in-view: true) {
+      animation-play-state: running;
+    }
+    animation-delay: calc((sibling-index() - 1) * 0.2s);
   }
-  animation-delay: calc((sibling-index() - 1) * 0.2s);
 }
 
 .technologySectionHeader {
@@ -100,7 +103,7 @@
   }
 
   .technologySectionWrapper {
-    margin: 188px 20px;
+    margin-block: 188px;
   }
 }
 
@@ -123,11 +126,11 @@
 @keyframes slideUp {
   0% {
     opacity: 0;
-    transform: translateY(2rem);
+    translate: 0 2rem;
   }
 
   100% {
     opacity: 1;
-    transform: translateY(0);
+    translate: 0;
   }
 }

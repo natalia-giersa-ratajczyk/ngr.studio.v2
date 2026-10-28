@@ -26,7 +26,7 @@
   --color-nebula-100: #f6f9f9;
   --color-nebula-500: #c2d8d6;
   --color-nebula-600: #8bb5b2;
-  --color-nebula-600-alpha: rgba(139, 181, 178, 0.5);
+  --color-nebula-600-alpha: rgb(from var(--color-nebula-600) r g b / 50%);
   --color-nebula-700: #5b8e8a;
   --color-nebula-800: #395956;
   --color-nebula-900: #172422;
@@ -39,7 +39,7 @@
   --color-gray-900: #151515;
   --color-background-light: #f0eee9;
 
-  --power-out-animation: linear(
+  --power-out-easing: linear(
     0,
     0.0167,
     0.0334,
@@ -142,7 +142,7 @@
     0.9996,
     1
   );
-  --spring-default-animation: linear(
+  --spring-default-easing: linear(
     0,
     0.0146,
     0.0548,
@@ -245,7 +245,7 @@
     1.0001,
     1
   );
-  --spring-bouncy-animation: linear(
+  --spring-bouncy-easing: linear(
     0,
     0.0114,
     0.0427,
@@ -349,7 +349,7 @@
     1
   );
 
-  --spring-snappy-animation: linear(
+  --spring-snappy-easing: linear(
     0,
     0.0088,
     0.0327,
@@ -464,12 +464,6 @@
   margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    interpolate-size: allow-keywords;
-  }
-}
-
 body {
   font-family: var(--font-main);
   font-weight: 400;
@@ -482,19 +476,10 @@ body::selection {
 }
 
 img,
-picture,
-video,
 canvas,
 svg {
   display: block;
   max-width: 100%;
-}
-
-input,
-button,
-textarea,
-select {
-  font: inherit;
 }
 
 p,
@@ -520,51 +505,4 @@ h6 {
   font-family: var(--heading-font);
   font-weight: 400;
   text-wrap: balance;
-}
-
-#root,
-#__next {
-  isolation: isolate;
-}
-
-.slideDownAnimation {
-  opacity: 0;
-  transform: translateY(-1.25rem);
-  animation: slideInY 1s var(--spring-bouncy-animation) forwards;
-  animation-delay: 1s;
-}
-
-.staggeredLettersAnimation {
-  opacity: 0;
-  transform: translateY(-1.75rem);
-  animation: slideInY 0.8s var(--spring-default-animation) forwards;
-  animation-delay: calc((sibling-index() - 1) * 0.05s);
-}
-
-.staggeredLinesAnimation {
-  opacity: 0;
-  transform: translateY(1.75rem);
-  animation: slideInY 0.3s var(--power-out-animation) forwards;
-  animation-delay: calc((sibling-index() * 0.2s) + 0.3s);
-}
-
-.fadeInAnimation {
-  animation: fadeIn 0.8s;
-}
-
-@keyframes slideInY {
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
 }
