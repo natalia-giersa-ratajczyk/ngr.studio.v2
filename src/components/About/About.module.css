@@ -10,21 +10,19 @@
 
 .imageWrapper {
   max-width: 540px;
-
-  /* animation: object-in-view both;
+  animation: imageInView both;
   animation-timeline: view();
-  animation-range: entry 0% entry 40%; */
+  animation-range: entry 0% entry 40%;
 }
 
 .image {
   width: 100%;
   height: auto;
   border-radius: 12px;
-
-  /* animation: fade-in 1s forwards paused;
-  @container style(--in-view: true) {
+  animation: fadeIn 0.6s var(--power-out-animation) both paused;
+  @container style(--image-in-view: true) {
     animation-play-state: running;
-  } */
+  }
 }
 
 .textWrapper {
@@ -32,6 +30,9 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 98px;
+  animation: titleInView both;
+  animation-timeline: view();
+  animation-range: entry 20%;
 }
 
 .aboutSectionHeader {
@@ -40,6 +41,10 @@
   font-size: 6.75rem;
   line-height: 1;
   color: var(--color-contessa-700);
+  animation: slideDown 1s var(--spring-bouncy-animation) both paused;
+  @container style(--title-in-view: true) {
+    animation-play-state: running;
+  }
 }
 
 .aboutText {
@@ -49,6 +54,20 @@
   gap: 1.2rem;
   font-size: 1rem;
   color: var(--color-gray-900);
+}
+
+.aboutText > p {
+  animation: textInView both;
+  animation-timeline: view();
+  animation-range: entry 60%;
+}
+
+.aboutText > p > span {
+  display: block;
+  animation: slideInX 0.6s var(--power-out-animation) both paused;
+  @container style(--text-in-view: true) {
+    animation-play-state: running;
+  }
 }
 
 .creativeDevText {
@@ -68,12 +87,23 @@
   color: var(--color-contessa-600);
 }
 
+.textWrapper p:has(.email) {
+  animation: emailInView both;
+  animation-timeline: view();
+  animation-range: entry 60%;
+}
+
 .email {
+  display: block;
   font-family: var(--heading-font);
   font-size: 1.6rem;
   color: var(--color-contessa-600);
   text-decoration: none;
   transition: color 0.2s;
+  animation: slideDown 1s var(--spring-bouncy-animation) both paused;
+  @container style(--email-in-view: true) {
+    animation-play-state: running;
+  }
 }
 
 .email:hover {
@@ -117,20 +147,62 @@
   }
 }
 
-/* @keyframes object-in-view {
+@keyframes imageInView {
   100% {
-    --in-view: true;
+    --image-in-view: true;
   }
 }
 
-@keyframes fade-in {
+@keyframes titleInView {
+  100% {
+    --title-in-view: true;
+  }
+}
+
+@keyframes textInView {
+  100% {
+    --text-in-view: true;
+  }
+}
+
+@keyframes emailInView {
+  100% {
+    --email-in-view: true;
+  }
+}
+
+@keyframes fadeIn {
   0% {
     opacity: 0;
-    translate: 0 50px;
+    scale: 0.95;
+  }
+
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@keyframes slideInX {
+  0% {
+    opacity: 0;
+    translate: 2rem 0;
   }
 
   100% {
     opacity: 1;
     translate: 0;
   }
-} */
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

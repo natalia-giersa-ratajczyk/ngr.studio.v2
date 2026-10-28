@@ -26,6 +26,7 @@
   --color-nebula-100: #f6f9f9;
   --color-nebula-500: #c2d8d6;
   --color-nebula-600: #8bb5b2;
+  --color-nebula-600-alpha: rgba(139, 181, 178, 0.5);
   --color-nebula-700: #5b8e8a;
   --color-nebula-800: #395956;
   --color-nebula-900: #172422;
@@ -370,6 +371,10 @@ body {
   font-weight: 400;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+}
+
+body::selection {
+  background-color: var(--color-nebula-600-alpha);
 }
 
 img,

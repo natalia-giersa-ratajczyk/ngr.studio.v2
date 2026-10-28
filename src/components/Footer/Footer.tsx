@@ -1,22 +1,22 @@
 "use client";
 
-import { useMediaQuery } from "@/hooks/useMediaQuery";
+// import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 import { Logo } from "../Logo";
-import { WaveIcon } from "../WaveIcon";
+// import { WaveIcon } from "../WaveIcon";
 import styles from "./Footer.module.css";
 
-const query = "(min-width: 1520px)";
+// const query = "(min-width: 1520px)";
 const date = new Date();
 const currentYear = date.getFullYear();
 
 export const Footer = () => {
-  const isDesktop = useMediaQuery(query);
+  // const isDesktop = useMediaQuery(query);
 
   return (
     <footer className={styles.footerWrapper}>
-      <WaveIcon />
-      {isDesktop && <WaveIcon />}
+      {/* <WaveIcon />
+      {isDesktop && <WaveIcon />} */}
       <Logo colorVariant="light" />
       <div className={styles.footerTextWrapper}>
         <a href="mailto:kontakt@ngr.studio" className={styles.contactWrapper}>
