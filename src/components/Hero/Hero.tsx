@@ -2,7 +2,7 @@
 
 import { Sparkles } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Logo } from "../Logo";
 import styles from "./Hero.module.css";
@@ -10,6 +10,18 @@ import styles from "./Hero.module.css";
 const text = "Cześć!";
 const segmenter = new Intl.Segmenter();
 const splitLetters = [...segmenter.segment(text)];
+
+const DebugCanvas = () => {
+  useEffect(() => {
+    console.log("Canvas mounted");
+
+    return () => {
+      console.log("Canvas unmounted");
+    };
+  });
+
+  return null;
+};
 
 export const Hero = () => {
   const [sparklesHaveLoaded, setSparklesHaveLoaded] = useState(false);
@@ -36,10 +48,15 @@ export const Hero = () => {
       </div>
       <div className={styles.canvasContainer}>
         <Canvas
-          dpr={[1, 2]}
+          dpr={1}
+          gl={{
+            antialias: false,
+            powerPreference: "low-power",
+          }}
           onCreated={onSparklesLoaded}
           className={`${sparklesHaveLoaded ? "fadeInAnimation" : ""}`}
         >
+          <DebugCanvas />
           <Sparkles
             count={500}
             speed={0.15}
