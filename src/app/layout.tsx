@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     description:
       "Potrzebujesz strony wizytówki przedstawiającej Ciebie lub Twój produkt? Chętnie pomogę Ci taką stworzyć",
     images: {
-      url: "/og-image.jpg",
+      url: "https://ngr.studio/og-image.jpg",
       width: 1277,
       height: 597,
     },
