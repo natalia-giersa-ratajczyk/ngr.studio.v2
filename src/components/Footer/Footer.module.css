@@ -1,4 +1,6 @@
 .footerWrapper {
+  --in-view: false;
+
   padding: 84px 60px;
   display: grid;
   grid-template-columns: repeat(3, max-content);
@@ -11,13 +13,15 @@
   animation-range: entry 40%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .footerWrapper > * {
-    animation: slideToLeft 0.6s var(--spring-snappy-easing) both paused;
-    @container style(--in-view: true) {
-      animation-play-state: running;
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .footerWrapper > * {
+      animation: slideToLeft 0.6s var(--spring-snappy-easing) both paused;
+      @container style(--in-view: true) {
+        animation-play-state: running;
+      }
+      animation-delay: calc((sibling-index() - 1) * 0.2s);
     }
-    animation-delay: calc((sibling-index() - 1) * 0.2s);
   }
 }
 

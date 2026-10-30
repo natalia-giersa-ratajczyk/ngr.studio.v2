@@ -8,6 +8,8 @@
 }
 
 .contentWrapper {
+  --in-view: false;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,21 +34,25 @@
   background-size: cover;
   filter: opacity(0.8);
   border-radius: 216px;
-  @media (prefers-reduced-motion: no-preference) {
-    animation: fadeIn 0.8s both paused;
-    @container style(--in-view: true) {
-      animation-play-state: running;
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      animation: fadeIn 0.8s both paused;
+      @container style(--in-view: true) {
+        animation-play-state: running;
+      }
     }
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .contentWrapper > * {
-    animation: slideUp 0.8s var(--spring-snappy-easing) both paused;
-    @container style(--in-view: true) {
-      animation-play-state: running;
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .contentWrapper > * {
+      animation: slideUp 0.8s var(--spring-snappy-easing) both paused;
+      @container style(--in-view: true) {
+        animation-play-state: running;
+      }
+      animation-delay: calc((sibling-index() - 1) * 0.2s);
     }
-    animation-delay: calc((sibling-index() - 1) * 0.2s);
   }
 }
 

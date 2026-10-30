@@ -9,6 +9,8 @@
 }
 
 .imageWrapper {
+  --image-in-view: false;
+
   max-width: 540px;
   animation: imageInView both;
   animation-timeline: view();
@@ -19,15 +21,19 @@
   width: 100%;
   height: auto;
   border-radius: 12px;
-  @media (prefers-reduced-motion: no-preference) {
-    animation: fadeIn 0.6s var(--power-out-easing) both paused;
-    @container style(--image-in-view: true) {
-      animation-play-state: running;
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      animation: fadeIn 0.6s var(--power-out-easing) both paused;
+      @container style(--image-in-view: true) {
+        animation-play-state: running;
+      }
     }
   }
 }
 
 .textWrapper {
+  --title-in-view: false;
+
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -43,10 +49,12 @@
   font-size: 6.75rem;
   line-height: 1;
   color: var(--color-contessa-700);
-  @media (prefers-reduced-motion: no-preference) {
-    animation: slideDown 1s var(--spring-bouncy-easing) both paused;
-    @container style(--title-in-view: true) {
-      animation-play-state: running;
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      animation: slideDown 1s var(--spring-bouncy-easing) both paused;
+      @container style(--title-in-view: true) {
+        animation-play-state: running;
+      }
     }
   }
 }
@@ -61,6 +69,8 @@
 }
 
 .aboutText > p {
+  --text-in-view: false;
+
   animation: textInView both;
   animation-timeline: view();
   animation-range: entry 60%;
@@ -68,10 +78,12 @@
 
 .aboutText > p > span {
   display: block;
-  @media (prefers-reduced-motion: no-preference) {
-    animation: slideToLeft 0.6s var(--power-out-easing) both paused;
-    @container style(--text-in-view: true) {
-      animation-play-state: running;
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      animation: slideToLeft 0.6s var(--power-out-easing) both paused;
+      @container style(--text-in-view: true) {
+        animation-play-state: running;
+      }
     }
   }
 }
@@ -97,6 +109,8 @@
 }
 
 .textWrapper p:has(.email) {
+  --email-in-view: false;
+
   animation: emailInView both;
   animation-timeline: view();
   animation-range: entry 60%;
@@ -108,11 +122,13 @@
   font-size: 1.6rem;
   color: var(--color-contessa-600);
   text-decoration: none;
-  @media (prefers-reduced-motion: no-preference) {
-    transition: color 0.2s;
-    animation: slideDown 1s var(--spring-bouncy-easing) both paused;
-    @container style(--email-in-view: true) {
-      animation-play-state: running;
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      transition: color 0.2s;
+      animation: slideDown 1s var(--spring-bouncy-easing) both paused;
+      @container style(--email-in-view: true) {
+        animation-play-state: running;
+      }
     }
   }
 }
